@@ -5,7 +5,7 @@ import { Country } from '../interfaces/country';
 import { Observable } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
-export class ServiceNameService {
+export class CountriesService {
 
   private apiUrl = 'https://restcountries.com/v3.1'
   constructor(private httpClient: HttpClient) { }
