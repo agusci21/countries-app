@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 
 @Component({
   selector: 'app-by-capital-page',
@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ByCapitalPageComponent {
 
+  searchByCapital(term: string) {
+    console.log({term});
+  }
 }
