@@ -6,6 +6,7 @@
     <shared-search-box
       placeHolder="Buscar por Pais"
       (onValue)="searchByName($event)"
+      (onDebounce)="searchByName($event)"
     ></shared-search-box>
   </div>
 </div>
