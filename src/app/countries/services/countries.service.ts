@@ -8,6 +8,10 @@ export class CountriesService {
   private apiUrl = 'https://restcountries.com/v3.1';
   constructor(private httpClient: HttpClient) {}
 
+  searchByAlphaCode(alphaCode: string): Observable<Country[]> {
+    const url = `${this.apiUrl}/alpha/${alphaCode}`;
+    return this.httpClient.get<Country[]>(url).pipe(catchError((_) => of([])));
+  }
   searchCapital(term: string): Observable<Country[]> {
     const url = `${this.apiUrl}/capital/${term}`;
     return this.httpClient.get<Country[]>(url).pipe(catchError((_) => of([])));
@@ -20,4 +24,5 @@ export class CountriesService {
     const url = `${this.apiUrl}/region/${term}`;
     return this.httpClient.get<Country[]>(url).pipe(catchError((_) => of([])));
   }
+
 }
